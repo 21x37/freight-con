@@ -67,6 +67,12 @@ module.exports = (env) => {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
             publicPath: '/dist/'
+        },
+        node: {
+            fs: 'empty',
+            net: 'empty',
+            tls: 'empty',
+            dns: 'empty'
         }
     };
 };

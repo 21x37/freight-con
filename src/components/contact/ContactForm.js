@@ -15,7 +15,8 @@ class ContactForm extends React.Component {
             [formType]: formValue
         });
     };
-    onSubmit() {
+    onSubmit(event) {
+        event.preventDefault();
         console.log(this.state);
 
         // Error Handling
@@ -26,12 +27,12 @@ class ContactForm extends React.Component {
         return (
             <div>
                 <h2>Send us a message!</h2>
-                <form>
-                    Name: <input name='name' type='text'/>
-                    Email: <input name='email' type='text'/>
-                    Company: <input name='company' type='text'/>
-                    Phone: <input name='phone' type='text'/>
-                    Message: <textarea name='message'></textarea>
+                <form onSubmit={this.onSubmit}>
+                    Name: <input name='name' type='text' onChange={this.onChange}/>
+                    Email: <input name='email' type='text' onChange={this.onChange}/>
+                    Company: <input name='company' type='text' onChange={this.onChange}/>
+                    Phone: <input name='phone' type='text' onChange={this.onChange}/>
+                    Message: <textarea name='message' onChange={this.onChange}></textarea>
                     <button>Send</button>
                 </form>
             </div>
