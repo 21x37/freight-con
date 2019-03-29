@@ -69,10 +69,7 @@ module.exports = (env) => {
             publicPath: '/dist/'
         },
         node: {
-            fs: 'empty',
-            net: 'empty',
-            tls: 'empty',
-            dns: 'empty'
+            fs: 'empty'
         }
     };
 };
