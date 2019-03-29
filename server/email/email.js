@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail');
 
-sgMail.setApiKey('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');
+sgMail.setApiKey('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');
 
 const sendContactEmail = (contact) => {
     console.log(contact);
@@ -8,7 +8,7 @@ const sendContactEmail = (contact) => {
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
         subject: 'CONTACT REQUEST!',
-        text: `CONTACT REQUEST MESSAGE`
+        text: `\n\ Name: ${contact.name}\n\ Email: ${contact.email} \n\ Company: ${contact.company} \n\ Phone: ${contact.phone} \n\ ${contact.message}`
     });
 };
 
@@ -28,7 +28,7 @@ const sendQuoteEmail = (quote) => {
         to: 'tylermok@outlook.com',
         from:'website@freightdispatch.com',
         subject: 'QUOTE REQUEST!',
-        text: 'QUOTE REQUEST MESSAGE'
+        text: `\n\ Name: ${quote.name} \n\ Company ${quote.company} \n\ Email: ${quote.email} \n\ Phone: ${quote.phone} \n\ Pick up: ${quote.pickupCity}, ${quote.pickupState} \n\ Deliver: ${quote.deliveryCity}, ${quote.deliveryState}`
     });
 };
 

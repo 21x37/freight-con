@@ -1,4 +1,5 @@
 import React from 'react';
+import sendQuoteForm from '../../utils/sendQuoteForm';
 
 class QuoteForm extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class QuoteForm extends React.Component {
     async onSubmit(e) {
         e.preventDefault();
         console.log(this.state);
+        sendQuoteForm(this.state);
 
         // Error handling
         // Call to send email to dispatcher
