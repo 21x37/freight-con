@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectUSState from 'react-select-us-states';
+import sendTruckForm from '../../utils/sendTruckForm';
 
 class TruckForm extends React.Component {
     constructor(props) {
@@ -7,6 +8,8 @@ class TruckForm extends React.Component {
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onFileUpload = this.onFileUpload.bind(this);
+        this.onStateChange = this.onStateChange.bind(this);
     }
     async onChange(event) {
         const formType = event.target.getAttribute('name');
@@ -16,12 +19,19 @@ class TruckForm extends React.Component {
         });
     };
     async onFileUpload(event) {
-        console.log(event.target.files[0]);
-    }
+        const formType = event.target.getAttribute('name');
+        const formValue = event.target.files[0];
+        await this.setState({
+            [formType]: formValue
+        });
+    };
+    async onStateChange(event) {
+        this.setState({ selectState: event })
+    };
     onSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
-    }
+        sendTruckForm(this.state);
+    };
     render() {
         return (
             <div>
@@ -43,14 +53,14 @@ class TruckForm extends React.Component {
                     Address <input  name='address' type='text' onChange={this.onChange}/>
                     City <input name='city' type='text' onChange={this.onChange}/>
                     State <input name='state' type='text' onChange={this.onChange}/>
-                    <SelectUSState/>
+                    <SelectUSState onChange={this.onStateChange} />
                     Zip <input name='zip' type='text' onChange={this.onChange}/>
                     Represnative <input name='represenative' type='text' onChange={this.onChange}/>
                     E Sign<input name='e-sign-contact' type='checkbox' onChange={this.onChange}/>
                     Print Contact<input name='print-contract' type='checkbox' onChange={this.onChange}/>
-                    <input onChange={this.onFileUpload} type='file'/>
-                    <input onChange={this.onFileUpload} type='file'/>
-                    <input onChange={this.onFileUpload} type='file'/>
+                    <input name='signed-contract' onChange={this.onFileUpload} type='file'/>
+                    <input name='named-insurance' onChange={this.onFileUpload} type='file'/>
+                    <input name='w9' onChange={this.onFileUpload} type='file'/>
                     <button>Print Contract</button>
                     <button>Send Documents</button>
                     <p>Truck form</p>
