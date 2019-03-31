@@ -43,6 +43,7 @@
     "css-loader": "^0.28.4",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
+    "filereader": "^0.10.3",
     "firebase": "^4.2.0",
     "history": "^4.7.2",
     "ionicons": "^4.5.5",

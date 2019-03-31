@@ -1,6 +1,7 @@
 import React from 'react';
 import SelectUSState from 'react-select-us-states';
 import sendTruckForm from '../../utils/sendTruckForm';
+import FileReader from 'filereader';
 
 class TruckForm extends React.Component {
     constructor(props) {
@@ -21,6 +22,10 @@ class TruckForm extends React.Component {
     async onFileUpload(event) {
         const formType = event.target.getAttribute('name');
         const formValue = event.target.files[0];
+
+        const reader = new global.FileReader();
+        console.log(reader.readAsDataURL(formValue));
+
         await this.setState({
             [formType]: formValue
         });
@@ -58,8 +63,8 @@ class TruckForm extends React.Component {
                     Represnative <input name='represenative' type='text' onChange={this.onChange}/>
                     E Sign<input name='e-sign-contact' type='checkbox' onChange={this.onChange}/>
                     Print Contact<input name='print-contract' type='checkbox' onChange={this.onChange}/>
-                    <input name='signed-contract' onChange={this.onFileUpload} type='file'/>
-                    <input name='named-insurance' onChange={this.onFileUpload} type='file'/>
+                    <input name='signedContract' onChange={this.onFileUpload} type='file'/>
+                    <input name='namedInsurance' onChange={this.onFileUpload} type='file'/>
                     <input name='w9' onChange={this.onFileUpload} type='file'/>
                     <button>Print Contract</button>
                     <button>Send Documents</button>
