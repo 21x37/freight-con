@@ -1,17 +1,34 @@
 import React from 'react';
 import SelectUSState from 'react-select-us-states';
 import sendTruckForm from '../../utils/sendTruckForm';
-import FileReader from 'filereader';
+
 
 class TruckForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {};
 
+        this.getBase64 = this.getBase64.bind(this);
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onFileUpload = this.onFileUpload.bind(this);
         this.onStateChange = this.onStateChange.bind(this);
-    }
+    };
+    async getBase64(file, type) {
+        const reader = new FileReader();
+        reader.readAsBinaryString(file);
+
+        reader.onload = () => {
+            this.setState(() => {
+                return {
+                    [type]: btoa(reader.result)
+                }
+            })
+        };
+        reader.onerror = () => {
+            console.log('Something went wrong.');
+        };
+    };
     async onChange(event) {
         const formType = event.target.getAttribute('name');
         const formValue = event.target.value;
@@ -23,12 +40,9 @@ class TruckForm extends React.Component {
         const formType = event.target.getAttribute('name');
         const formValue = event.target.files[0];
 
-        const reader = new global.FileReader();
-        console.log(reader.readAsDataURL(formValue));
 
-        await this.setState({
-            [formType]: formValue
-        });
+        this.getBase64(formValue, formType);
+
     };
     async onStateChange(event) {
         this.setState({ selectState: event })
@@ -36,6 +50,7 @@ class TruckForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         sendTruckForm(this.state);
+        console.log(this.state);
     };
     render() {
         return (

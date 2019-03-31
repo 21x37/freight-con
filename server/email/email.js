@@ -1,6 +1,5 @@
 const sgMail = require('@sendgrid/mail');
 const key = require('../../api');
-const FileReader = require('filereader');
 
 sgMail.setApiKey(key);
 
@@ -17,15 +16,36 @@ const sendContactEmail = (contact) => {
 const sendTruckEmail = (truck) => {
     console.log(truck);
 
-    const reader = new global.FileReader();
-    console.log(truck.signedContract);
+    
 
     sgMail.send({
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
         subject: 'TRUCK SETUP PACKET!',
-        text: 'TRUCK SETUP PACKET MESSAGE',
-        html: `<img src='${reader.readAsDataURL(truck.signedContract)}'></img>`
+        text: 'test',
+        attachments: [
+            {
+              content: truck.signedContract,
+              filename: 'signed-contract.jpg',
+              type: 'image/jpg',
+              disposition: 'attachment',
+              contentId: 'signed-contract'
+            },
+            {
+                content: truck.namedInsurance,
+                filename: 'named-insurance.jpg',
+                type: 'image/jpg',
+                disposition: 'attachment',
+                contentId: 'named-insurance'
+            },
+            {
+                content: truck.w9,
+                filename: 'w9.jpg',
+                type: 'image/jpg',
+                disposition: 'attachment',
+                contentId: 'w9'
+            }
+        ]
     });
 };
 
