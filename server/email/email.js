@@ -9,7 +9,13 @@ const sendContactEmail = (contact) => {
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
         subject: 'CONTACT REQUEST!',
-        text: `\n\ Name: ${contact.name}\n\ Email: ${contact.email} \n\ Company: ${contact.company} \n\ Phone: ${contact.phone} \n\ ${contact.message}`
+        html: (
+            `<p><b>Name:</b> ${contact.name}</p>
+            <p><b>Email:</b> ${contact.email}</p>
+            <p><b>Phone:</b> ${contact.phone}</p>
+            <p><b>Company:</b> ${contact.company}<p>
+            <p><b>Message:</b> ${contact.message}</p>`
+        )
     });
 };
 
@@ -22,7 +28,18 @@ const sendTruckEmail = (truck) => {
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
         subject: 'TRUCK SETUP PACKET!',
-        text: 'test',
+        html: (
+            `<p><b>Name:</b> ${truck.name}</p>
+            <p><b>Represenative:</b> ${truck.represenative}</p>
+            <p><b>Doing Business As:</b> ${truck.dbaName}</p>
+            <p><b>Email:</b> ${truck.email}</p>
+            <p><b>Address:</b> ${truck.address}</p>
+            <p><b>City:</b> ${truck.city}</p>
+            <p><b>State:</b> ${truck.state}</p>
+            <p><b>Zip:</b> ${truck.zip}</p>
+            <p><b>Type:</b> ${truck.carrier}</p>
+            <p><b>Number:</b> ${truck.mc}: ${truck.number}</p>`
+            ),
         attachments: [
             {
               content: truck.signedContract,
@@ -55,7 +72,14 @@ const sendQuoteEmail = (quote) => {
         to: 'tylermok@outlook.com',
         from:'website@freightdispatch.com',
         subject: 'QUOTE REQUEST!',
-        text: `\n\ Name: ${quote.name} \n\ Company ${quote.company} \n\ Email: ${quote.email} \n\ Phone: ${quote.phone} \n\ Pick up: ${quote.pickupCity}, ${quote.pickupState} \n\ Deliver: ${quote.deliveryCity}, ${quote.deliveryState}`
+        html: (
+            `<p><b>Name:</b> ${quote.name}</p>
+            <p><b>Company:</b> ${quote.company}</p>
+            <p><b>Email:</b> ${quote.email}
+            <p><b>Phone:</b> ${quote.phone}
+            <p><b>Pick Up:</b> ${quote.pickupCity}, ${quote.pickupState}</p>
+            <p><b>Deliver:</b> ${quote.deliveryCity}, ${quote.deliveryState}</p>`
+        )
     });
 };
 
