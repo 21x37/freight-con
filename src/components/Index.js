@@ -4,8 +4,6 @@ import Home from './home/Home';
 
 
 // Home Page
-//
-// Home component contains homepage content
 
 
 const Index = () => {
@@ -13,7 +11,6 @@ const Index = () => {
         <div>
             <Header />
             <Home />
-            <p>HomePage</p>
         </div>
     )
 }

@@ -4,7 +4,6 @@ const key = require('../../api');
 sgMail.setApiKey(key);
 
 const sendContactEmail = (contact) => {
-    console.log(contact);
     sgMail.send({
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
@@ -20,10 +19,6 @@ const sendContactEmail = (contact) => {
 };
 
 const sendTruckEmail = (truck) => {
-    console.log(truck);
-
-    
-
     sgMail.send({
         to: 'tylermok@outlook.com',
         from: 'website@freightdispatch.com',
@@ -67,7 +62,6 @@ const sendTruckEmail = (truck) => {
 };
 
 const sendQuoteEmail = (quote) => {
-    console.log(quote);
     sgMail.send({
         to: 'tylermok@outlook.com',
         from:'website@freightdispatch.com',

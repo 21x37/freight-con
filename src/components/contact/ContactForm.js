@@ -1,10 +1,25 @@
 import React from 'react';
-import sendContactForm from '../../utils/sendContactForm';
+import sendForm from '../../utils/sendForm';
+import validator from '../../utils/validator';
 
 class ContactForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            message: ''
+        };
+        this.baseState = {
+            name: '',                //Base state for resetting on submit.
+            email: '',
+            company: '',
+            phone: '',
+            message: ''
+        };
+        this.required = ['name', 'email', 'company', 'phone', 'message'];
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -20,26 +35,33 @@ class ContactForm extends React.Component {
             [formType]: formValue
         });
     };
+
     onSubmit(event) {
         event.preventDefault();
 
-        // Sending post request to backend to send email
-        sendContactForm(this.state)
-        .then((res) => {
-            this.setState(() => {
-                // Either spreading out error object or data object.
-                return {
-                    ...res
-                };
+        // Validator checks state to see if it matches the requirements.
+        const boolean = validator(this.state, this.required);
+
+        if (boolean) {
+            // Sending post request to backend to send email
+            sendForm(this.state)
+            .then(() => {
+                this.setState(this.baseState);
+                this.setState({ error: '', response: 'Sent!' });
+                document.querySelectorAll('input').forEach((input) => input.value = '');
+                document.querySelector('textarea').value = '';
             });
-        });
+        } else {
+            this.setState({ error: 'Please fill out all of the fields.', response: '' })
+        }
 
     };
     render() {
         return (
             <div>
                 <h2>Send us a message!</h2>
-                <p>{this.state.error || this.state.data}</p>
+                <p>{this.state.error}</p>
+                <p>{this.state.response}</p>
                 <form onSubmit={this.onSubmit}>
                     Name: <input name='name' type='text' onChange={this.onChange}/>
                     Email: <input name='email' type='text' onChange={this.onChange}/>

@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import DesktopNav from './header/DesktopNav';
+import MobileNav from './header/MobileNav';
 
 
 
 const Header = () => {
     return (
         <div>
-            <h1>Freight Broker</h1>
-            <Link to='/'>Home</Link>
-            <Link id='contact-nav' to='/contact'>Contact</Link>
-            <Link id='quote-nav' to='/quote'>Quote</Link>
-            <Link id='truck-nav' to='/truck'>Truck Setup</Link>
-            <Link id='blog-nav' to='/blog'>Blog</Link>
+            <div className='header-container'>
+                <div className='header-title-wrapper'>
+                    <h1 className='header-title'>Freight Broker</h1>
+                </div>
+                <div className='desktop-nav-wrapper'>
+                    <DesktopNav />
+                </div>
+                <MobileNav />
+            </div>
         </div>
     )
 };

@@ -9,7 +9,6 @@ const Quote = () => {
             <Header />
             <QuoteText />
             <QuoteForm />
-            <p>Quote page</p>
         </div>
     );
 };

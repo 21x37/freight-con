@@ -9,7 +9,6 @@ const Contact = () => {
             <Header />
             <ContactText />
             <ContactForm />
-            <p>Contact page</p>
         </div>
     );
 };

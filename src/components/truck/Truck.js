@@ -7,7 +7,6 @@ const Truck = () => {
         <div>
             <Header />
             <TruckForm />
-            <p>Truck page</p>
         </div>
     );
 };

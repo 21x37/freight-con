@@ -3,8 +3,6 @@ const router = new express.Router();
 const { sendContactEmail, sendTruckEmail, sendQuoteEmail } = require('../email/email');
 
 
-// Possibly put */api for D.R.Y
-
 router.post('/contact/api', async (req, res) => {
     sendContactEmail(req.body);
     res.send(req.body);

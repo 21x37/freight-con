@@ -70,6 +70,9 @@ module.exports = (env) => {
         },
         node: {
             fs: 'empty'
+        },
+        externals: {
+            FileReader: 'FileReader'
         }
     };
 };
