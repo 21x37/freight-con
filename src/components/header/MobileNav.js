@@ -41,21 +41,26 @@ class MobileNav extends React.Component {
                         this.onClick();
                     }
                 }}>
+                <div className='contact-link'>
+                    <Link style={{textDecoration: 'none', color: '#FFF'}}  to='/contact'>Contact</Link>
+                </div>
+
                     <div className='nav-button'>
                         <div className='nav-line'></div>
                         <div className='nav-line'></div>
                         <div className='nav-line'></div>
                     </div>
+
                 </div>
                 <div className={`animated ${this.state.navSlidOut ? 'slideInLeft' : 'slideOutLeft'}`}>
                     <div className={`mobile-nav-wrapper ${this.state.isVisible ? '' : ''}`}>
                         <div className='mobile-nav-container'>
                             <ul className='mobile-nav'>
-                                <li><Link to='/'>Home</Link></li>
-                                <li><Link id='contact-nav' to='/contact'>Contact</Link></li>
-                                <li><Link id='quote-nav' to='/quote'>Quote</Link></li>
-                                <li><Link id='truck-nav' to='/truck'>Truck Setup</Link></li>
-                                <li><Link id='blog-nav' to='/blog'>Blog</Link></li>
+                                <li><Link style={{color: '#000', textDecoration: 'none'}} to='/'>Home</Link></li>
+                                <li><Link style={{color: '#000', textDecoration: 'none'}} id='contact-nav' to='/contact'>Contact</Link></li>
+                                <li><Link style={{color: '#000', textDecoration: 'none'}} id='quote-nav' to='/quote'>Quote</Link></li>
+                                <li><Link style={{color: '#000', textDecoration: 'none'}} id='truck-nav' to='/truck'>Truck Setup</Link></li>
+                                <li><Link style={{color: '#000', textDecoration: 'none'}} id='blog-nav' to='/blog'>Blog</Link></li>
                             </ul>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ImageCarousel from './ImageCarousel';
 
 class Home extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <ImageCarousel />
                <p>Serving all of North America</p> 
                <p>Freight Brokerage and Third Party Logistics Coordination</p>
 
