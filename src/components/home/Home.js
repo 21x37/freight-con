@@ -7,20 +7,20 @@ class Home extends React.Component {
         super(props);
     }
     slideOut() {
-        const nav = document.querySelector('.animated');
-        nav.classList.add('slideInLeft');
-        setTimeout(() => {
+        // const nav = document.querySelector('.animated');
+        // nav.classList.add('slideInLeft');
+        // setTimeout(() => {
 
-        }, 3000)
-        console.log('slide')
+        // }, 3000)
+        // console.log('slide')
     }
     render() {
         return (
-            <div>
+            <div className='homepage-container'>
                 <ImageCarousel />
                <p>Serving all of North America</p> 
                <p>Freight Brokerage and Third Party Logistics Coordination</p>
-
+            <Link to='/quote'><button className='button'>Get a Quote</button></Link>
             </div>
         )
     }
@@ -29,3 +29,4 @@ class Home extends React.Component {
     //    <Link to='/contact'><button onClick={this.slideOut} id='contact-btn'>Contact</button></Link>
     //    <Link to='/quote'><button onClick={this.slideOut} id='quote-btn'>Quote</button></Link>
 export default Home;
+

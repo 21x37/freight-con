@@ -8,7 +8,7 @@ import Home from './home/Home';
 
 const Index = () => {
     return (
-        <div>
+        <div className='homepage'>
             <Header />
             <Home />
         </div>
