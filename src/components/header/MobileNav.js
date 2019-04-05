@@ -45,11 +45,16 @@ class MobileNav extends React.Component {
                     <Link style={{textDecoration: 'none', color: '#FFF'}}  to='/contact'>Contact</Link>
                 </div>
 
-                    <div className='nav-button'>
+                    {!this.state.navSlidOut && <div className='nav-button'>
                         <div className='nav-line'></div>
                         <div className='nav-line'></div>
                         <div className='nav-line'></div>
-                    </div>
+                    </div>}
+
+                    {this.state.navSlidOut && <div className='nav-button nav-button-x'>
+                        <div className='nav-line nav-line-1'></div>
+                        <div className='nav-line nav-line-2'></div>
+                    </div>}
 
                 </div>
                 <div className={`animated ${this.state.navSlidOut ? 'slideInLeft' : 'slideOutLeft'}`}>

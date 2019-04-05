@@ -58,6 +58,18 @@ body {
     width: 39px;
 }
 
+.nav-line-1 {
+    transform: rotate(50deg);
+    position: relative;
+    top: 7.5px;
+}
+
+.nav-line-2 {
+    transform: rotate(130deg);
+    margin-bottom: 8px;
+}
+
+
 .mobile-nav-wrapper {
     position: absolute;
 }
