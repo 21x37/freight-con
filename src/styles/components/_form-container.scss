@@ -1,0 +1,49 @@
+.contact-form-container {
+    background: #f1f1f1;
+    border-radius: 3px;
+    display: block;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 20px;
+    top: 20px;
+    text-align: center;
+    width: 80vw;
+}
+
+.contact-form-container input, textarea {
+    display: block;
+    width: 60vw;
+}
+
+.contact-form-container textarea {
+    padding: 10px;
+}
+
+.form-text {
+}
+
+.contact-form-container h2 {
+    font-family: 'Roboto', Helvetica, Arial;
+    font-weight: 300;
+    margin-left: 20px;
+    text-align: left;
+}
+
+input:active {
+}
+
+input:focus {
+    border: 1px solid rgb(39, 110, 241);
+}
+
+.input {
+    font-family: 'Roboto', Helvetica, Arial;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.input::placeholder {
+    font-family: 'Roboto', Helvetica, Arial;
+}

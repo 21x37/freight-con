@@ -59,17 +59,19 @@ class ContactForm extends React.Component {
     render() {
         return (
             <div>
-                <h2>Send us a message!</h2>
-                <p>{this.state.error}</p>
-                <p>{this.state.response}</p>
-                <form onSubmit={this.onSubmit}>
-                    Name: <input name='name' type='text' onChange={this.onChange}/>
-                    Email: <input name='email' type='text' onChange={this.onChange}/>
-                    Company: <input name='company' type='text' onChange={this.onChange}/>
-                    Phone: <input name='phone' type='text' onChange={this.onChange}/>
-                    Message: <textarea name='message' onChange={this.onChange}></textarea>
-                    <button>Send</button>
-                </form>
+                <div className='contact-form-container'>
+                    <h2 className='form-text'>Send us a message!</h2>
+                    <p>{this.state.error}</p>
+                    <p>{this.state.response}</p>
+                    <form onSubmit={this.onSubmit}>
+                        <input className='input contact-input' name='name' type='text' placeholder='Name' onChange={this.onChange}/>
+                        <input className='input contact-input' name='email' type='text' placeholder='Email' onChange={this.onChange}/>
+                        <input className='input contact-input' name='company' type='text' placeholder='Company' onChange={this.onChange}/>
+                        <input className='input contact-input' name='phone' type='text' placeholder='Phone' onChange={this.onChange}/>
+                        <textarea className='input' name='message' placeholder='Message' onChange={this.onChange}></textarea>
+                        <button className='button button__contact'>Send</button>
+                    </form>
+                </div>
             </div>
         );
     };

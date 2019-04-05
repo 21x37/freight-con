@@ -1,0 +1,25 @@
+.contact-page-image {
+    width: 130vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.contact-text {
+    line-height: 140%;
+    font-family: 'Roboto', Arial, Helvetica, Arial;
+    font-size: 105%;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    text-align: center;
+    width: 300px;
+}
+
+.contact-page-form-wrapper {
+    margin-top: 60px;
+}
+
+.button__contact {
+    margin-top: 20px;
+}

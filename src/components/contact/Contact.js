@@ -8,7 +8,9 @@ const Contact = () => {
         <div>
             <Header />
             <ContactText />
-            <ContactForm />
+            <div className='contact-page-form-wrapper'>
+                <ContactForm />
+            </div>
         </div>
     );
 };
