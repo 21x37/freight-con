@@ -68,20 +68,23 @@ class QuoteForm extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.state.response}</p>
-                <p>{this.state.error}</p>
-                <form onSubmit={this.onSubmit}>
-                    Name: <input name='name' type='text' onChange={this.onChange} /><br/>
-                    Email: <input name='email' type='text' onChange={this.onChange} /><br/>
-                    Pickup City: <input name='pickupCity' type='text' onChange={this.onChange} /><br/>
-                    Delivery City: <input name='deliveryCity' type='text' onChange={this.onChange} /><br/>
+                <div className='quote-form-container'>
+                    <h2 className='form-text'>Get a Quote!</h2>
+                    <p>{this.state.response}</p>
+                    <p>{this.state.error}</p>
+                    <form onSubmit={this.onSubmit}>
+                        <input className='input' placeholder='Name' name='name' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Email' name='email' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Pickup City' name='pickupCity' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Delivery City' name='deliveryCity' type='text' onChange={this.onChange} />
 
-                    Company: <input name='company' type='text' onChange={this.onChange} /><br/>
-                    Phone: <input name='phone' type='text' onChange={this.onChange} /><br/>
-                    Pickup State: <input name='pickupState' type='text' onChange={this.onChange} /><br/>
-                    Delivery State: <input name='deliveryState' type='text' onChange={this.onChange} /><br/>
-                    <button>Get Quote!</button>
-                </form>
+                        <input className='input' placeholder='Company' name='company' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Phone' name='phone' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Pickup State' name='pickupState' type='text' onChange={this.onChange} />
+                        <input className='input' placeholder='Delivery State' name='deliveryState' type='text' onChange={this.onChange} />
+                        <button className='button' >Get Quote!</button>
+                    </form>
+                </div>
             </div>
         );
     };

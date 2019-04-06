@@ -1,0 +1,34 @@
+.quote-form-container {
+    background: #f1f1f1;
+    border-radius: 3px;
+    display: block;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    width: 80vw;
+}
+
+.quote-text {
+    line-height: 140%;
+    font-family: 'Roboto', Arial, Helvetica, Arial;
+    font-size: 105%;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 360px;
+    text-align: center;
+}
+
+.quote-form-container h2 {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.quote-form-container button {
+    margin-top: 15px;
+}
+
+.quote-form-container input:first-child {
+    margin-top: 0px;
+}
