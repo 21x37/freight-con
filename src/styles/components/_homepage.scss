@@ -13,4 +13,32 @@
 .carousel-image {
     border-radius: 2px;
     margin-bottom: 45px;
+    width: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel-image {
+        border-radius: 6px;
+        left: 100px;
+        position: relative;
+        top: 40px;
+        width: 600px;
+    }
+
+    .homepage-container {
+        left: 250px;
+        margin-top: -380px;
+        position: relative;
+    }
+
+    .homepage-container p {
+        width: 500px;
+        line-height: 160%;
+    }
+
+    .homepage-container button {
+        left: 100px;
+        margin-top: 20px;
+        position: relative;
+    }
 }

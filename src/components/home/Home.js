@@ -16,11 +16,15 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div className='homepage-container'>
+            <div>
                 <ImageCarousel />
-               <p>Serving all of North America</p> 
-               <p>Freight Brokerage and Third Party Logistics Coordination</p>
-            <Link to='/quote'><button className='button'>Get a Quote</button></Link>
+                <div className='homepage-container'>
+                <p>Serving all of North America</p> 
+                <p>Freight Brokerage and Third Party Logistics Coordination</p>
+                <p>Where most brokers' jobs end at getting you a truck, our work is just beginning. We can handle the very complex to the very simple, and we do it in the same way.</p>
+                <p>We commit to uncovering all the details and tracking freight while communicating personally with customers throughout the entire process.</p>
+                <Link to='/quote'><button className='button'>Get a Quote</button></Link>
+                </div>
             </div>
         )
     }

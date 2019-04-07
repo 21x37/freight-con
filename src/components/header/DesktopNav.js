@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 const DesktopNav = () => {
     return (
-        <div>
-            <Link to='/'>Home</Link>
-            <Link id='contact-nav' to='/contact'>Contact</Link>
-            <Link id='quote-nav' to='/quote'>Quote</Link>
-            <Link id='truck-nav' to='/truck'>Truck Setup</Link>
-            <Link id='blog-nav' to='/blog'>Blog</Link>
+        <div className='desktop-nav-container'>
+            <ul>
+                <li><Link style={{textDecoration: 'none', color: '#FFF'}} to='/'>Home</Link></li>
+                <li><Link style={{textDecoration: 'none', color: '#FFF'}} id='contact-nav' to='/contact'>Contact</Link></li>
+                <li><Link style={{textDecoration: 'none', color: '#FFF'}} id='quote-nav' to='/quote'>Quote</Link></li>
+                <li><Link style={{textDecoration: 'none', color: '#FFF'}} id='truck-nav' to='/truck'>Truck Setup</Link></li>
+            </ul>
         </div>
     );
 };

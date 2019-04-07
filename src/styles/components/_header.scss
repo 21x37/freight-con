@@ -102,6 +102,24 @@ body {
     .desktop-nav-wrapper {
         display: block;
     }
+    .nav-button-mobile-wrapper, .mobile-nav-container {
+        display: none;
+    }
+    .header-title {
+        top: 3px;
+    }
+
+    .desktop-nav-container {
+        margin-top: -23px;
+    }
+
+    .desktop-nav-container ul li {
+        display: inline-block;
+        font-family: 'Roboto', Helvetica, Arial;
+        margin-right: 25px;
+    }
+
+
 
 
     /* For desktop: */
