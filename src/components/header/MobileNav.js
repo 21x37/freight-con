@@ -27,9 +27,10 @@ class MobileNav extends React.Component {
             this.setState({ disabled: true })
             this.setState({ navSlidOut: true });
             nav.addEventListener('animationend', () => {
+
+            })
                 this.setState({ isVisible: true });
                 this.setState({ disabled: false })
-            })
             console.log(this.state.navSlidOut);
         }
     };
@@ -65,7 +66,6 @@ class MobileNav extends React.Component {
                                 <li><Link style={{color: '#000', textDecoration: 'none'}} id='contact-nav' to='/contact'>Contact</Link></li>
                                 <li><Link style={{color: '#000', textDecoration: 'none'}} id='quote-nav' to='/quote'>Quote</Link></li>
                                 <li><Link style={{color: '#000', textDecoration: 'none'}} id='truck-nav' to='/truck'>Truck Setup</Link></li>
-                                <li><Link style={{color: '#000', textDecoration: 'none'}} id='blog-nav' to='/blog'>Blog</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -76,3 +76,5 @@ class MobileNav extends React.Component {
 };
 
 export default MobileNav;
+
+// <li><Link style={{color: '#000', textDecoration: 'none'}} id='blog-nav' to='/blog'>Blog</Link></li>
