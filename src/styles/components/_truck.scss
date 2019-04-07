@@ -1,0 +1,37 @@
+.truck-form-container {
+    background: #f1f1f1;
+    display: block;
+    height: 110%;
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 80vw;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.truck-form-container select {
+    margin-top: 10px;
+    width: 217px;
+}
+
+.truck-form-container p {
+    font-family: 'Roboto', Helvetica, Arial;
+    margin: -8px 0;
+}
+
+.truck-input::after {
+    content: '*';
+    color: red;
+    font-size: 150%;
+}
+
+.truck-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(27, 27, 27);
+    color: #FFF;
+    cursor: pointer;
+    height: 30px;
+    margin-top: 10px;
+    width: 200px;
+}

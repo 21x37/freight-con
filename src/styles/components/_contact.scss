@@ -1,7 +1,24 @@
+.contact-form-container {
+    background: #f1f1f1;
+    border-radius: 3px;
+    display: block;
+    height: 80vh;
+    min-height: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    top: 20px;
+    text-align: center;
+    width: 80vw;
+}
+
 .contact-page-image {
     width: 130vw;
     position: absolute;
     z-index: -1;
+}
+
+.contact-form-container form {
+    margin-top: 30px;
 }
 
 .contact-text {
@@ -10,14 +27,13 @@
     font-size: 105%;
     font-weight: 400;
     margin: 0 auto;
-    margin-bottom: 20px;
     margin-top: 25px;
     text-align: center;
     width: 300px;
 }
 
 .contact-page-form-wrapper {
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .button__contact {

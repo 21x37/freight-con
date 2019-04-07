@@ -2,10 +2,12 @@
     background: #f1f1f1;
     border-radius: 3px;
     display: block;
-    height: 100vh;
+    height: 90vh;
+    min-height: 110%;
     margin: 0 auto;
     text-align: center;
     width: 80vw;
+    overflow: unset;
 }
 
 .quote-text {
@@ -16,8 +18,12 @@
     margin: 0 auto;
     margin-bottom: 20px;
     margin-top: 10px;
-    width: 360px;
+    width: 80vw;
     text-align: center;
+}
+
+.quote-form-container form {
+    margin-top: 40px;
 }
 
 .quote-form-container h2 {

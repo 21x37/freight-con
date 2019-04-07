@@ -106,39 +106,57 @@ class TruckForm extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.state.response}</p>
-                <p>{this.state.error}</p>
-                <form onSubmit={this.onSubmit}>
-                    Name: <input name='name' type='text' onChange={this.onChange}/>
-                    Email: <input name='email' type='text' onChange={this.onChange}/>
-                    Doing Business As: <input name='dbaName' type='text' onChange={this.onChange}/>
-                    MC or CA: <select name='mc' defaultValue='' onChange={this.onChange}>
-                        <option disabled></option>
-                        <option>MC</option>
-                        <option>CA</option>
-                    </select>
-                    <input name='number' type='text' onChange={this.onChange}/>
-                    Carrier Type: <select defaultValue='' name='carrier' onChange={this.onChange}>
-                        <option disabled></option>
-                        <option>Contract</option>
-                        <option>Carrier</option>
-                    </select>
-                    Address: <input  name='address' type='text' onChange={this.onChange}/>
-                    City: <input name='city' type='text' onChange={this.onChange}/>
-                    <SelectUSState onChange={this.onStateChange} />
-                    Zip: <input name='zip' type='text' onChange={this.onChange}/>
-                    Represenative: <input name='represenative' type='text' onChange={this.onChange}/>
-                    E Sign: <input name='e-sign-contact' type='checkbox' onChange={this.handleCheckbox}/>
-                    {this.state.checked && <div><span>Type your name to sign: </span><input name='signature' type='text' onChange={this.onChange}/></div>}
-                    Signed Contract: <input name='signedContract' onChange={this.onFileUpload} type='file'/>
-                    Named Insurance: <input name='namedInsurance' onChange={this.onFileUpload} type='file'/>
-                    W9: <input name='w9' onChange={this.onFileUpload} type='file'/>
-                    <button>Print Contract</button>
-                    <button>Send Documents</button>
-                </form>
+                <div className='truck-form-container'>
+                    <h2 className='form-text'>Truck Setup</h2>
+                    <p>{this.state.response}</p>
+                    <p>{this.state.error}</p>
+                    <form onSubmit={this.onSubmit}>
+                        <input className='input truck-input' placeholder='Name' name='name' type='text' onChange={this.onChange}/>
+                        <input className='input truck-input' placeholder='Email' name='email' type='text' onChange={this.onChange}/>
+                        <input className='input truck-input' placeholder='Doing Business As' name='dbaName' type='text' onChange={this.onChange}/>
+                        <br/>
+                        <select name='mc' defaultValue='' onChange={this.onChange}>
+                            <option disabled></option>
+                            <option>MC</option>
+                            <option>CA</option>
+                        </select>
+                        <br/>
+                        <input className='input truck-input' placeholder='Number' name='number' type='text' onChange={this.onChange}/>
+                        <br/>
+                        <select defaultValue='' name='carrier' onChange={this.onChange}>
+                            <option disabled></option>
+                            <option>Contract</option>
+                            <option>Carrier</option>
+                        </select>
+                        <br/>
+                        <input className='input truck-input' placeholder='Address'  name='address' type='text' onChange={this.onChange}/>
+                        <input className='input truck-input' placeholder='City' name='city' type='text' onChange={this.onChange}/>
+                        <input className='input truck-input' placeholder='State' name='state' type='text' onChange={this.onChange}/>
+                        <input className='input truck-input' placeholder='Zip' name='zip' type='text' onChange={this.onChange}/>
+                        <input className='input' placeholder='Represenative' name='represenative' type='text' onChange={this.onChange}/>
+                        <br/>
+                        <input className='input truck-input' placeholder='E Sign' name='e-sign-contact' type='checkbox' onChange={this.handleCheckbox}/>
+                        <br/>
+                        {this.state.checked && <div><p>Type your name to sign</p><input className='input truck-input' name='signature' type='text' onChange={this.onChange}/></div>}
+
+                        <input id='namedInsurance' style={{display: 'none'}} name='namedInsurance' onChange={this.onFileUpload} type='file'/>
+                        <button className='truck-button' type='button'><label htmlFor='namedInsurance'>Upload Named</label></button>
+                        <br/>
+                        <input id='w9' style={{display: 'none'}} name='w9' onChange={this.onFileUpload} type='file'/>
+                        <button className='truck-button' type='button'><label htmlFor='w9'>Upload W9</label></button>
+                        <br/>
+                        <br/>
+                        <button className='button'>Send Documents</button>
+                    </form>
+                </div>
             </div>
         );
     };
 };
 
 export default TruckForm;
+
+
+// <input id='signedContract' name='signedContract' style={{display: 'none'}} onChange={this.onFileUpload} type='file'/>
+// <button type='button'><label htmlFor='signedContract'>Upload Signed</label></button>
+// <br/>
