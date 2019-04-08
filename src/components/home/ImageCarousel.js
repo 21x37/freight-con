@@ -13,9 +13,6 @@ class ImageCarsouel extends React.Component {
         }
     }
     render() {
-        setInterval(() => {
-            this.setState((prevState) => { index: (prevState.index + 1) % this.state.imageSrcPath.length})
-        })
         return (
             <div>
                 <img class='carousel-image' src={this.state.imageSrcPath[this.state.index]}/>

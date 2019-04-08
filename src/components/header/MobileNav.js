@@ -21,7 +21,6 @@ class MobileNav extends React.Component {
                 this.setState({ isVisible: false });
                 this.setState({ disabled: false })
             })
-            console.log(this.state.navSlidOut);
         } else {
             const nav = document.querySelector('.animated');
             this.setState({ disabled: true })
@@ -31,7 +30,6 @@ class MobileNav extends React.Component {
             })
                 this.setState({ isVisible: true });
                 this.setState({ disabled: false })
-            console.log(this.state.navSlidOut);
         }
     };
     render() {

@@ -20,9 +20,7 @@
 }
 
 .truck-input::after {
-    content: '*';
-    color: red;
-    font-size: 150%;
+
 }
 
 .truck-button {
@@ -34,4 +32,20 @@
     height: 30px;
     margin-top: 10px;
     width: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+    .truck-form-container {
+        width: 50vw;
+    }
+
+    .truck-form-container input {
+        display: block;
+        width: 460px;
+    }
+
+    .truck-form-container select {
+        width: 480px;
+        margin-top: 0;
+    }
 }

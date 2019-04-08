@@ -2,6 +2,10 @@
     background-image: url('~/images/truck-img');
 }
 
+.hidden-on-mobile {
+    display: none;
+}
+
 .homepage-container {
     font-family: 'Roboto', Helvetica;
     margin: 0 auto;
@@ -10,35 +14,48 @@
     width: 300px;
 }
 
+.homepage-container p {
+    line-height: 150%;
+}
+
+.homepage-container button {
+    margin-top: 20px;
+}
+
 .carousel-image {
     border-radius: 2px;
     margin-bottom: 45px;
     width: 300px;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: -20px;
 }
 
 @media only screen and (min-width: 768px) {
     .carousel-image {
         border-radius: 6px;
         left: 100px;
+        margin-bottom: 0;
         position: relative;
         top: 40px;
         width: 600px;
     }
 
     .homepage-container {
-        left: 250px;
-        margin-top: -380px;
+        left: 290px;
+        margin-top: -350px;
         position: relative;
     }
 
     .homepage-container p {
-        width: 500px;
+        width: 450px;
         line-height: 160%;
     }
 
     .homepage-container button {
-        left: 100px;
-        margin-top: 20px;
+        left: 71px;
+        margin-top: 30px;
         position: relative;
     }
+
 }
