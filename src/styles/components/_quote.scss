@@ -38,3 +38,27 @@
 .quote-form-container input:first-child {
     margin-top: 0px;
 }
+
+@media only screen and (min-width: 768px) {
+    .quote-form-container {
+        width: 50vw;
+        height: 80vh;
+    }
+
+    .quote-form-container input {
+        display: block;
+        width: 460px;
+    }
+
+    .quote-form-container form {
+        margin-top: 60px;
+    }
+
+    .quote-text {
+        line-height: 160%;
+        font-size: 115%;
+        margin-bottom: 50px;
+        margin-top: 30px;
+        width: 550px;
+    }
+}
