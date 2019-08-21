@@ -71,7 +71,7 @@ class QuoteForm extends React.Component {
                 <div className='quote-form-container'>
                     <h2 className='form-text'>Get a Quote!</h2>
                     <p>{this.state.response}</p>
-                    <p>{this.state.error}</p>
+                    <p className='error'>{this.state.error}</p>
                     <form onSubmit={this.onSubmit}>
                         <input className='input' placeholder='Name' name='name' type='text' onChange={this.onChange} />
                         <input className='input' placeholder='Email' name='email' type='text' onChange={this.onChange} />

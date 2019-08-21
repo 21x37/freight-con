@@ -61,7 +61,7 @@ class ContactForm extends React.Component {
             <div>
                 <div className='contact-form-container'>
                     <h2 className='form-text'>Send us a message!</h2>
-                    <p>{this.state.error}</p>
+                    <p className='error'>{this.state.error}</p>
                     <p>{this.state.response}</p>
                     <form onSubmit={this.onSubmit}>
                         <input className='input contact-input' name='name' type='text' placeholder='Name' onChange={this.onChange}/>
