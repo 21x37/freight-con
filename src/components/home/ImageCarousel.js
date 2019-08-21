@@ -15,7 +15,7 @@ class ImageCarsouel extends React.Component {
     render() {
         return (
             <div>
-                <img class='carousel-image' src={this.state.imageSrcPath[this.state.index]}/>
+                <img className='carousel-image' src={this.state.imageSrcPath[this.state.index]}/>
             </div>
         );
     };
