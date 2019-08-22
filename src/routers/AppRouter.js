@@ -4,7 +4,6 @@ import { Router, Route, Switch } from 'react-router-dom';
 import Index from '../components/Index';
 import Truck from '../components/truck/Truck';
 import Quote from '../components/quote/Quote';
-import Blog from '../components/blog/Blog';
 import Contact from '../components/contact/Contact';
 
 const history = createHistory();
@@ -17,7 +16,6 @@ const AppRouter = () => (
                 <Route path='/contact' component={Contact} exact={true}/>
                 <Route path='/quote' component={Quote} exact={true}/>
                 <Route path='/truck' component={Truck} exact={true}/>
-                <Route path='/blog' component={Blog} exact={true}/>
            </Switch> 
         </div>
     </Router>
