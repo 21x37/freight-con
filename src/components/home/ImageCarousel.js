@@ -12,9 +12,18 @@ class ImageCarsouel extends React.Component {
             index: 0
         }
     }
+    componentWillMount() {
+        setInterval(() => {
+            this.setState((prevState) => {
+                return {
+                    index: (prevState.index + 1) % this.state.imageSrcPath.length
+                }
+            })
+        }, 5000)
+    }
     render() {
         return (
-            <div>
+            <div className='carousel-image-wrapper'>
                 <img className='carousel-image' src={this.state.imageSrcPath[this.state.index]}/>
             </div>
         );
