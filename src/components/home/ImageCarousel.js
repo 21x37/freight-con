@@ -19,15 +19,19 @@ class ImageCarsouel extends React.Component {
         setInterval(() => {
             this.setState((prevState) => {
                 return {
-                    index: (prevState.index + 1) % this.state.imageSrcPath.length
+                    index: (prevState.index + 1) % this.state.imageSrcPath.length,
+                    fadeOut: false
                 }
             })
         }, 5000)
+        setInterval(() => {
+            this.setState({ fadeOut: true })
+        }, 4500)
     }
     render() {
         return (
             <div className='carousel-image-wrapper'>
-                <img className='carousel-image' src={this.state.imageSrcPath[this.state.index]}/>
+                <img className={`carousel-image animated fadeIn ${this.state.fadeOut? 'fadeOut' : '' }`} src={this.state.imageSrcPath[this.state.index]}/>
             </div>
         );
     };
