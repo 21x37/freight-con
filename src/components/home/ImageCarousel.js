@@ -26,7 +26,8 @@ class ImageCarsouel extends React.Component {
         }, 5000)
         setInterval(() => {
             this.setState({ fadeOut: true })
-        }, 4500)
+
+        }, 4200)
     }
     render() {
         return (
