@@ -109,7 +109,7 @@ class TruckForm extends React.Component {
                 <div className='truck-form-container'>
                     <h2 className='form-text'>Truck Setup</h2>
                     <p>{this.state.response}</p>
-                    <p>{this.state.error}</p>
+                    <p className='error error-truck'>{this.state.error}</p>
                     <form onSubmit={this.onSubmit}>
                         <input className='input truck-input' placeholder='Name' name='name' type='text' onChange={this.onChange}/>
                         <input className='input truck-input' placeholder='Email' name='email' type='text' onChange={this.onChange}/>
