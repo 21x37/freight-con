@@ -17,19 +17,19 @@ npm install
 
 ### Installing
 
-I. Clone the repo
+1. Clone the repo
 
 ```
 git clone https://github.com/21x37/freight-con.git
 ```
 
-II. Run npm install inside project root
+2. Run npm install inside project root
 
 ```
 npm install
 ```
 
-III. Start the server
+3. Start the server
 
 ```
 npm run start
